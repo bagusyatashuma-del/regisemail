@@ -12,30 +12,27 @@ $mail = new PHPMailer(true);
 
 try {
 
-    // Konfigurasi SMTP Gmail
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
 
-    // Gmail pengirim
     $mail->Username   = 'maharasthra05@gmail.com';
 
-    // Ganti dengan App Password Google
+    
     $mail->Password   = 'ioav rmkh hpmv pojq';
 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
-    // Pengirim
     $mail->setFrom(
         'maharasthra05@gmail.com',
         'Sistem Pendaftaran'
     );
 
-    // Penerima
+  
     $mail->addAddress($email, $nama);
 
-    // Isi email
+   
     $mail->isHTML(true);
     $mail->Subject = 'Konfirmasi Pendaftaran';
 
